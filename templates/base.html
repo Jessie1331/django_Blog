@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{static 'base.css'}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+
+</head>
+<body>
+    <nav class="Navbar">
+        <nav class="level">
+              <p class="level-item has-text-centered">
+                <a class="link is-info" href="">Home</a>
+              </p>
+              <p class="level-item has-text-centered">
+                <a class="link is-info" href="about/">About</a>
+              </p>
+         
+              <h1 class="level-item has-text-centered">
+               <strong class="title is-1" href="">Eat It, Love It, Blog It </strong>
+              </h1>
+              <p class="level-item has-text-centered">
+                <a class="link is-info" href="posts/">Cummunity</a>
+              </p>
+              
+              {% if user.is_authenticated %}
+              <p class="level-item has-text-centered">  <a class="nav-link" href="{% url 'new' %}">New Post</a></p>
+              <p class="level-item has-text-centered"><a class="nav-link" href="{% url 'password_change' %}">Change Password</a></p>
+              <p class="level-item has-text-centered"> <a class="nav-link" href="{% url 'logout' %}">Logout</a></p>
+           {% else %}
+              <div class="navbar-end">
+                    <div class="navbar-item">
+                      <div class="buttons">
+                        <a class="button is-primary" href=">
+                          <h1>Sign up</h1>
+                        </a>
+                        <a class="button is-light" href="{& url 'logged_out' &}">
+                          Log in
+                        </a>
+                    {% endif %}  </div>
+                    </div>
+            </nav>
+          
+        </nav>
+            <section class="section">
+     <div class="container">
+       {% block content %}
+       {% endblock content %}
+  </div>
+  <img src="{% static 'img/2.jpg' %}" alt="">
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

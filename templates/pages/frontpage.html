@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section class="hero">
+    <div class='hero-body'>
+        <div class="container">
+
+        
+        <section class="section">
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    {% for post in post %}
+                    <div class="content is-medium">
+                        <p class='date is=3'>{{ post.create.at }}</p>
+                        <a href="{% url 'post_detail' post.slug %}"></a>
+                        <h1 class="title">{{ Post.title}} </h1>
+                        <div class="img">{{Post.image}}</div>
+                        <h5 class="sub_discription">{{ post.sub_discription }}</h5>
+
+
+                       
+                    </div>
+                    {% endfor%}
+                </div>
+            </div>
+
+        </section>
+    </div>
+    </div>
+</section>
+{% endblock content %} -->

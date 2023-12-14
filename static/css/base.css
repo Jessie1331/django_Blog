@@ -1,0 +1,12 @@
+body {
+    background-image: url('https://i2.wp.com/www.jagerfoods.com/wp-content/uploads/2018/02/Food-Blogs.jpg?resize=700%2C366');
+    background-size: cover;
+
+}
+h1{
+    font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+p{
+    color: aqua;
+}
