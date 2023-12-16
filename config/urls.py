@@ -26,6 +26,7 @@ urlpatterns = [
     path('home/', HomePageView.as_view, name='home'),
     path('posts/', include("posts.urls")),
     path('accounts/', include("django.contrib.auth.urls")),
+    path("issues/", include("issues.urls")),
 
         
         

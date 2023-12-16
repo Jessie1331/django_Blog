@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ user.team.name }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+<h1 class="col">To Do</h1>
+<ul>
+    {% for issues into_do_list %}
+    <li>{{ issue.summary }}</li>
+    {% endfor %}
+
+</ul>
+<h1 class='col'>In Progress</h1>
+<ul>
+    {% for issue in in_prog_list %}
+    <li>{{ issue.summary }}</li>
+    {% endfor %}
+</ul>
+
+<h1 class="col">Done</h1>
+<ul>
+    {% for issue in done_list %}
+    <li>{{ issue.summary }}</li>
+    {% endfor %}
+</ul>
+    </div>
+</div>
+{% endblock content %}

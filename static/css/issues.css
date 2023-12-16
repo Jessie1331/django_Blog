@@ -1,0 +1,15 @@
+.container {
+    background-color: aqua;
+    font-style: italic;
+
+}
+container h1 {
+    font-size: larger;
+    font-weight: bold ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+}
+.col{
+    border: 1px;
+    background-color: aliceblue;
+}
